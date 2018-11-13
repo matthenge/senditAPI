@@ -1,0 +1,5 @@
+zenv/
+*__pycache__
+.vscode
+*__init__.pyc 
+*.pyc
