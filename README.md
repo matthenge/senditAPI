@@ -18,14 +18,14 @@ These instructions will get you a copy of the project running on your local mach
 
 ## Installing
 
-.Clone this repository from https://github.com/matthenge/senditAPI 
+.Clone this repository from [here](https://github.com/matthenge/senditAPI) 
 	
 .To test the API locally, set up a virtual environment in the root folder 
     - virtualenv venv
 	
 .Activate the virtual environment through; source venv/bin/activate via the terminal
 	
-.Run the ecport FLASK_APP=run.py command via the terminal
+.Run the export FLASK_APP=run.py command via the terminal
 	
 .Install dependencies through pip install -r requirements.txt
 	
@@ -81,7 +81,7 @@ These instructions will get you a copy of the project running on your local mach
         GET /api/v1/users/<user_id>
 	
         
-## Build with
+## Built with
 
     .Python 3
     
