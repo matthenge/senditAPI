@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/matthenge/senditAPI.svg?branch=develop)](https://travis-ci.org/matthenge/senditAPI)
-[![Coverage Status](https://coveralls.io/repos/github/matthenge/senditAPI/badge.svg)](https://coveralls.io/github/matthenge/senditAPI)
+[![Coverage Status](https://coveralls.io/repos/github/matthenge/senditAPI/badge.svg?branch=ch-update-readme-161892938)](https://coveralls.io/github/matthenge/senditAPI?branch=ch-update-readme-161892938)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ce3cc4349922e5a7c860/maintainability)](https://codeclimate.com/github/matthenge/senditAPI/maintainability)
 
 # sendIT
