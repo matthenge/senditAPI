@@ -25,7 +25,7 @@ These instructions will get you a copy of the project running on your local mach
 	
 .Activate the virtual environment through; source venv/bin/activate via the terminal
 	
-.Run the ecport FLASK_APP=run.py command via the terminal
+.Run the export FLASK_APP=run.py command via the terminal
 	
 .Install dependencies through pip install -r requirements.txt
 	
