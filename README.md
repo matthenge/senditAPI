@@ -18,7 +18,7 @@ These instructions will get you a copy of the project running on your local mach
 
 ## Installing
 
-.Clone this repository from https://github.com/matthenge/senditAPI 
+.Clone this repository from [here](https://github.com/matthenge/senditAPI) 
 	
 .To test the API locally, set up a virtual environment in the root folder 
     - virtualenv venv
