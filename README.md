@@ -81,7 +81,7 @@ These instructions will get you a copy of the project running on your local mach
         GET /api/v1/users/<user_id>
 	
         
-## Build with
+## Built with
 
     .Python 3
     
