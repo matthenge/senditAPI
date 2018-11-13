@@ -1,3 +1,6 @@
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/ce3cc4349922e5a7c860/maintainability)](https://codeclimate.com/github/matthenge/senditAPI/maintainability)
+
 # sendIT
 
 SendIT is a courier services application that allows users to register and place an order to have a parcel delivered. Users can also update the destination of an undelivered parcel or cancel the delivery order all together. 
