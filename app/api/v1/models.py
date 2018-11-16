@@ -1,22 +1,5 @@
 """User Model"""
-users = [
-    {
-    "user_id":"20",
-    "firstname":"mary",
-    "lastname":"muthoni",
-    "username":"kajojo",
-    "email":"jojo@yandex.com",
-    "password":"joan"
-
-}, {
-    "user_id":"21",
-    "firstname":"eunice",
-    "lastname":"wanjiru",
-    "username":"kapienga",
-    "email":"shix@gmail.com",
-    "password":"shiro"
-}
-]
+users = []
 
 class UserModel:
     """Class user model"""
@@ -41,7 +24,4 @@ class UserModel:
         """Returning all users"""
         return self.db
 
-    def get_one_user(self, user_id):
-        """Returning a specific user"""
-        user = [user for user in self.db if user['user_id'] == str(user_id)]
-        return user[0]
+ 

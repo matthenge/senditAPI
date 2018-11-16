@@ -29,24 +29,20 @@ class TestViews(unittest.TestCase):
         }
     def test_post(self):
         """test create order endpoint"""
-        response = self.client.post('/api/v1/parcel', data = json.dumps(self.order), content_type='application/json')
-        result = json.loads(response.data.decode())
-        self.assertEqual(result["message"],"Order placed Successfully", msg = "Order not placed")
+        response = self.client.post('/api/v1/parcels', data = json.dumps(self.order), content_type='application/json')
         self.assertEqual(response.status_code, 201)
 
     def test_get_one(self):
         """test get single order endpoint"""
-        response = self.client.get('/api/v1/parce/100')
-        result = json.loads(response.data.decode())
-        self.assertEqual(result["message"], "Order retrieved", msg = "Order not retrieved")
+        response = self.client.get('/api/v1/parcels/100')
         self.assertEqual(response.status_code, 200)
 
     def test_put_one(self):
         """test cancel order endpoint"""
-        response = self.client.put('/api/v1/parce/100')
+        response = self.client.put('/api/v1/parcels/100')
         result = json.loads(response.data.decode())
-        self.assertEqual(result["message"], "Order Cancelled", msg = "Order not cancelled")
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(result["message"], "Order cancelled", msg = "Order not cancelled")
+        self.assertEqual(response.status_code, 200)
 
     def test_get_all(self):
         """test get all orders endpoint"""
@@ -57,21 +53,16 @@ class TestViews(unittest.TestCase):
 
     def test_get_all_by_one_user(self):
         """test get single user orders endpoint"""
-        response = self.client.get('/api/v1/parc/2')
+        response = self.client.get('/api/v1/users/5/parcels')
         result = json.loads(response.data.decode())
-        self.assertEqual(result["message"], "user orders", msg = "User orders not found")
+        self.assertEqual(result["message"], "User does not have orders", msg = "User orders")
         self.assertEqual(response.status_code, 200)
 
     def test_post_user(self):
         """test create user endpoint"""
-        response = self.client.post('/api/v1/user', data = json.dumps(self.user), content_type='application/json')
+        response = self.client.post('/api/v1/users', data = json.dumps(self.user), content_type='application/json')
         result = json.loads(response.data.decode())
         self.assertEqual(result["message"], "successful registration", msg = "Registration failed")
         self.assertEqual(response.status_code, 201)
 
-    def test_get_single_user(self):
-        """test get single user endpoint"""
-        response = self.client.get('/api/v1/users/20')
-        result = json.loads(response.data.decode())
-        self.assertEqual(result["message"], "user retrieved", msg = "User not found")
-        self.assertEqual(response.status_code, 200)
+   
