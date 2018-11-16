@@ -31,7 +31,7 @@ class OneOrder(Resource):
             "message": "Order placed Successfully"
         }, 201
 
-class GetOneOrder(Resource):
+class ReturnOneOrder(Resource):
     """Specific order endpoints"""
     def get(self, order_id):
         """GET specific order"""
@@ -44,7 +44,7 @@ class GetOneOrder(Resource):
         one_order = parcel.get_specific_order(order_id)
         return one_order
             
-    
+class CancelOrder(Resource):
     def put(self, order_id):
         """Cancel order"""
         try:
@@ -54,9 +54,7 @@ class GetOneOrder(Resource):
                 "Error": "Please enter a valid order number"
             }
         cncl = parcel.cancel_order(order_id)
-        return {
-            "message": cncl
-        }, 201
+        return cncl
 
 class AllOrders(Resource):
     """Class for all order views"""
@@ -75,7 +73,7 @@ class UserParcels(Resource):
             int(user_id)
         except ValueError:
             return {
-                "Error": "Please enter a valid user number"
+                "Error": "Please enter a valid user ID"
             }
         all_user_orders = parcel.get_orders_by_specific_user(user_id)
         return all_user_orders
@@ -96,11 +94,4 @@ class OneUser(Resource):
             "message": "successful registration"
         }, 201
 
-class GetUser(Resource):
-    """Get one user"""
-    def get(self, user_id):
-        """Get a single user"""
-        one_user = users.get_one_user(user_id)
-        return {
-            "message": "user retrieved", "user": one_user
-        }, 200
+
