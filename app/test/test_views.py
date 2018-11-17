@@ -40,8 +40,6 @@ class TestViews(unittest.TestCase):
     def test_put_one(self):
         """test cancel order endpoint"""
         response = self.client.put('/api/v1/parcels/100')
-        result = json.loads(response.data.decode())
-        self.assertEqual(result["message"], "Order cancelled", msg = "Order not cancelled")
         self.assertEqual(response.status_code, 200)
 
     def test_get_all(self):

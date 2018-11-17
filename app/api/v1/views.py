@@ -40,7 +40,7 @@ class ReturnOneOrder(Resource):
         except ValueError:
             return {
                 "Error": "Please enter a valid order number"
-            }
+            }, 400
         one_order = parcel.get_specific_order(order_id)
         return one_order
             
@@ -52,7 +52,7 @@ class CancelOrder(Resource):
         except ValueError:
             return {
                 "Error": "Please enter a valid order number"
-            }
+            }, 400
         cncl = parcel.cancel_order(order_id)
         return cncl
 
@@ -74,7 +74,7 @@ class UserParcels(Resource):
         except ValueError:
             return {
                 "Error": "Please enter a valid user ID"
-            }
+            }, 400
         all_user_orders = parcel.get_orders_by_specific_user(user_id)
         return all_user_orders
         

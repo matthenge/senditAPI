@@ -32,10 +32,10 @@ class Parcels:
             if order['order_id'] == int(order_id):
                 return {
                      "message": "Order retrieved", "Order" : order
-                    } 
+                    }, 200 
         return {
                 "Error": "Order not found!"
-                    }
+                    }, 200
                           
 
     def get_orders_by_specific_user(self, user_id):
@@ -47,24 +47,25 @@ class Parcels:
         if not user_orders:
             return{
                 "message": "User does not have orders"
-            }
+            }, 200
         return {
              "message": "user orders", "User Orders": user_orders
-            }
+            }, 200
 
     def cancel_order(self, order_id):
         """Cancel an order"""
         for order in self.db:
-            if order['status'] == 'pending':
-                order.update({'status': 'cancelled'})
-                return {
-                    "message" : "Order cancelled"
-                }
-            elif order['status'] == 'cancelled':
-                return{
-                    "Error":"Order has already been cancelled"
-                }
-            elif order['status'] == 'delivered':
-                return{
-                    "Error": "Order already delivered"
-                }
+            if order['order_id'] == int(order_id):
+                if order['status'] == 'pending':
+                    order.update({'status': 'cancelled'})
+                    return {
+                        "message" : "Order cancelled"
+                    }, 200
+                elif order['status'] == 'cancelled':
+                    return{
+                        "Error":"Order has already been cancelled"
+                    }, 200
+                elif order['status'] == 'delivered':
+                    return{
+                        "Error": "Order already delivered"
+                    }, 200
