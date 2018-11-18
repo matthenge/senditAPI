@@ -30,6 +30,8 @@ class TestViews(unittest.TestCase):
     def test_post(self):
         """test create order endpoint"""
         response = self.client.post('/api/v1/parcels', data = json.dumps(self.order), content_type='application/json')
+        result = json.loads(response.data.decode())
+        self.assertEqual(result["message"], "Order placed Successfully", msg = "Order registration failed")
         self.assertEqual(response.status_code, 201)
 
     def test_get_one(self):

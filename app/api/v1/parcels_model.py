@@ -19,8 +19,8 @@ class Parcels:
             'price' : price, 
             'user_id' : user_id   
         }
-        prcl = self.db.append(payload)
-        return prcl
+        parcel = self.db.append(payload)
+        return parcel 
 
     def get_all_orders(self):
         """Return all orders"""
