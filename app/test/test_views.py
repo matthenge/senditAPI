@@ -30,6 +30,8 @@ class TestViews(unittest.TestCase):
     def test_post(self):
         """test create order endpoint"""
         response = self.client.post('/api/v1/parcels', data = json.dumps(self.order), content_type='application/json')
+        result = json.loads(response.data.decode())
+        self.assertEqual(result["message"], "Order placed Successfully", msg = "Order registration failed")
         self.assertEqual(response.status_code, 201)
 
     def test_get_one(self):
@@ -40,8 +42,6 @@ class TestViews(unittest.TestCase):
     def test_put_one(self):
         """test cancel order endpoint"""
         response = self.client.put('/api/v1/parcels/100')
-        result = json.loads(response.data.decode())
-        self.assertEqual(result["message"], "Order cancelled", msg = "Order not cancelled")
         self.assertEqual(response.status_code, 200)
 
     def test_get_all(self):

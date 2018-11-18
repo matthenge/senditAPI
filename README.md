@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/matthenge/senditAPI.svg?branch=develop)](https://travis-ci.org/matthenge/senditAPI)
-[![Coverage Status](https://coveralls.io/repos/github/matthenge/senditAPI/badge.svg?branch=ch-update-readme-161892938)](https://coveralls.io/github/matthenge/senditAPI?branch=ch-update-readme-161892938)
+[![Coverage Status](https://coveralls.io/repos/github/matthenge/senditAPI/badge.svg)](https://coveralls.io/github/matthenge/senditAPI)
 [![Maintainability](https://api.codeclimate.com/v1/badges/ce3cc4349922e5a7c860/maintainability)](https://codeclimate.com/github/matthenge/senditAPI/maintainability)
 
 # sendIT
@@ -37,7 +37,7 @@ These instructions will get you a copy of the project running on your local mach
 	
 .Test the endpoints though Postman 
 	
-    -To create a new order, use http://127.0.0.1:5000/api/v1/parcel
+    -To create a new order, use http://127.0.0.1:5000/api/v1/parcels
 		
       Hearder: Content-Type: application/json
 			
@@ -45,7 +45,7 @@ These instructions will get you a copy of the project running on your local mach
 			
       {"pickup_location" : "kenol", "destination" : "kajiado", "price" : "1000", "user_id" : "50"}
 			
-    -To register a new user, use http://127.0.0.1:5000/api/v1/user
+    -To register a new user, use http://127.0.0.1:5000/api/v1/users
 		
         Hearder: Content-Type: application/json
 			
@@ -56,33 +56,31 @@ These instructions will get you a copy of the project running on your local mach
     
         Hearder: Content-Type: application/json
 	
-    -To fetch specific parcel order use http://127.0.0.1:5000/api/v1/parce/100
+    -To fetch specific parcel order use http://127.0.0.1:5000/api/v1/parcels/<order_id>
     
         Hearder: Content-Type: application/json
 	
-    -To fetch all parcel orders by one user, use http://127.0.0.1:5000/api/v1/parc/2
+    -To fetch all parcel orders by one user, use http://127.0.0.1:5000/api/v1/users/<user_id>/parcels
     
         Hearder: Content-Type: application/json
 	
-    -To cancel a parcel order use http://127.0.0.1:5000/api/v1/parce/100
+    -To cancel a parcel order use http://127.0.0.1:5000/api/v1/parcels/<order_id>
     
         Hearder: Content-Type: application/json
 	
    -The endpoints are;
    
-        POST /api/v1/parcel
+        POST /api/v1/parcels
 	
         GET /api/v1/parcels
 	
-        GET /api/v1/parce/<order_id>
+        GET /api/v1/parcels/<order_id>
 	
-        GET /api/v1/parc/<user_id>
+        GET /api/v1/users/<user_id>/parcels
 	
-        PUT /api/v1/parce/<order_id>
+        PUT /api/v1/parcels/<order_id>
 	
-        POST /api/v1/user
-	
-        GET /api/v1/users/<user_id>
+        POST /api/v1/users
 	
         
 ## Built with
